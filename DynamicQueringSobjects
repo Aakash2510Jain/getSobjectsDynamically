@@ -1,0 +1,7 @@
+ Map<String,String> objectMap = new Map<String,String>();
+        map<string, SObjectType> objs = Schema.getGlobalDescribe();
+        for(Schema.SObjectType objTyp: Schema.getGlobalDescribe().Values()){
+            objectMap.put(objTyp.getDescribe().getName(),objTyp.getDescribe().getLabel());
+        }
+        system.debug('objectMap::'+objectMap);
+        return objectMap;
