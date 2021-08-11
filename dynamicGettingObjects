@@ -1,0 +1,57 @@
+
+    /*
+* 
+* 
+* DataTypeMap = new Map<String, Set<String>>();
+TypeSet = new Set<String>();
+
+String objType='Account' ;
+Map<String, Schema.SObjectType> schemaMap = Schema.getGlobalDescribe();
+Schema.SObjectType leadSchema = schemaMap.get(objType);
+Map<String, Schema.SObjectField> fieldMap = leadSchema.getDescribe().fields.getMap();
+
+for (String fieldName: fieldMap.keySet()) {
+//get all the fields label for Account Object
+String fieldLabel = fieldMap.get(fieldName).getDescribe().getLabel();
+TypeSet.add(fieldLabel);
+//get data types for each fields
+Schema.DisplayType fielddataType = fieldMap.get(fieldName).getDescribe().getType();
+
+DataTypeMap.put(String.valueof(fielddataType), TypeSet);
+}
+* 
+* 
+* 
+* 
+* 
+* 
+* for(sObjects__c obj : sObjectList){
+List <Schema.SObjectField> fieldList = Schema.SObjectType.get(Account).fields;
+for(Schema.SObjectField fieldList){
+
+}
+//fields
+//Picklist
+//
+if()
+}
+Schema.DisplayType dataTypeofField = Schema.getGlobalDescribe().get(objectName).getDescribe().fields.getMap().get(fieldName).getDescribe().getType();
+
+* 
+* 
+* 
+* 
+* String objectName = 'Account'; 
+Map<String , Schema.SObjectType> schemaGlobalDescription = Schema.getGlobalDescribe();
+Schema.sObjectType objType = schemaGlobalDescription.get(objectName); 
+Schema.DescribeSObjectResult objDescribeSObjectResult = objType.getDescribe(); 
+Map<String , Schema.SObjectField> mapFieldList = objDescribeSObjectResult.fields.getMap();  
+for(Schema.SObjectField field : mapFieldList.values())  
+{  
+Schema.DescribeFieldResult fieldResult = field.getDescribe(); 
+// isAccessible () Returns true if the current user can see this object, false otherwise
+if(fieldResult.isAccessible())
+objFields.add(fieldResult.getName());
+}
+
+System.debug('objFields--'+objFields);  */
